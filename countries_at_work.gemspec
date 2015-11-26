@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = 'countries_at_work'
   gem.require_paths = ['lib']
-  gem.version       = Countries::VERSION
+  gem.version       = CountriesAtWork::VERSION
 
   gem.add_dependency('i18n_data', '~> 0.7.0')
   gem.add_dependency('currencies', '~> 0.4.2')

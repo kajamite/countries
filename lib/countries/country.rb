@@ -1,7 +1,8 @@
-module ISO3166; end
+module ISO3166AtWork
+  ; end
 
-class ISO3166::Country
-  Setup = ISO3166::Setup.new
+class ISO3166AtWork::Country
+  Setup = ISO3166AtWork::Setup.new
 
   AttrReaders = [
     :number,
@@ -50,7 +51,7 @@ class ISO3166::Country
   attr_reader :data
 
   def initialize(country_data)
-    @data = country_data.is_a?(Hash) ? country_data : ISO3166::Data.new(country_data).call
+    @data = country_data.is_a?(Hash) ? country_data : ISO3166AtWork::Data.new(country_data).call
   end
 
   def valid?
@@ -117,7 +118,7 @@ class ISO3166::Country
     end
 
     def all(&blk)
-      blk ||= proc { |_alpha2, d| ISO3166::Country.new(d) }
+      blk ||= proc { |_alpha2, d| ISO3166AtWork::Country.new(d) }
       Setup.data.map(&blk)
     end
 
@@ -128,7 +129,7 @@ class ISO3166::Country
     end
 
     def all_names_with_codes(locale = 'en')
-      ISO3166::Country.all.map do |c|
+      ISO3166AtWork::Country.all.map do |c|
         [(c.translation(locale) || c.name).html_safe, c.alpha2]
       end.sort_by { |d| d[0] }
     end
@@ -189,12 +190,12 @@ class ISO3166::Country
   end
 end
 
-def ISO3166::Country(country_data_or_country)
+def ISO3166AtWork::Country(country_data_or_country)
   case country_data_or_country
-  when ISO3166::Country
+  when ISO3166AtWork::Country
     country_data_or_country
   when String, Symbol
-    ISO3166::Country.search(country_data_or_country)
+    ISO3166AtWork::Country.search(country_data_or_country)
   else
     fail TypeError, "can't convert #{country_data_or_country.class.name} into ISO3166::Country"
   end
