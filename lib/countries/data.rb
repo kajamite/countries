@@ -1,4 +1,4 @@
-module ISO3166
+module ISO3166AtWork
   ##
   # Handles building the in memory store of countries data
   class Data

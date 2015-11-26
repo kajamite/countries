@@ -1,8 +1,9 @@
-module ISO3166; end
+module ISO3166AtWork
+  ; end
 
-class ISO3166::Country
+class ISO3166AtWork::Country
   def mongoize
-    ISO3166::Country.mongoize(self)
+    ISO3166AtWork::Country.mongoize(self)
   end
 
   class << self
@@ -25,7 +26,7 @@ class ISO3166::Country
     private
 
     def valid_alpha2?(country)
-      country.is_a?(String) && !ISO3166::Country.new(country).nil?
+      country.is_a?(String) && !ISO3166AtWork::Country.new(country).nil?
     end
   end
 end
