@@ -1,3 +1,10 @@
+Note:
+=========
+This is fork of original https://github.com/hexorx/countries
+I forked for some personal customizations, you probably should go and use original https://github.com/hexorx/countries
+
+
+
 Countries
 =========
 
