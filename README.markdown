@@ -15,51 +15,32 @@ Countries is a collection of all sorts of useful information for every country i
 Installation
 ------------
 
-    gem install countries
+    gem install countries_at_work
 
 If you’re in Rails 2.3 or earlier, place this in your environment.rb:
 
-    config.gem 'countries'
+    config.gem 'countries_at_works'
 
 Or you can install via bundler Gemfile if you are using Rails 3:
 
-    gem 'countries'
-
-Or you can install via bundler Gemfile with a Country Helper class:
-
-    gem 'countries', :require => 'countries/global'
-
-Upgrading to 1.2.0
------------
-
-    gem 'countries', :require => 'global'
-
-has become
-
-    gem 'countries', :require => 'countries/global'
+    gem 'countries_at_works'
 
 
 Basic Usage
 -----------
 
-Note that Country class still exist by default.
-(is inherited from ISO3166::Country to keep backward compatibility).
-
-Simply load a new country object using Country.new(*alpha2*) or the shortcut Country[*alpha2*]. An example works best.
-
-    c = ISO3166::Country.new('US')
-
     # with global Country Helper
-    c = Country['US']
+    c = CountryAtWork['US']
 
 Attribute-Based Finder Methods
 ------------
 
 You can lookup a country or an array of countries using any of the data attributes via the find\_country\_by_*attribute* dynamic methods:
 
-    c = ISO3166::Country.find_country_by_name('united states')
-    list = ISO3166::Country.find_all_countries_by_region('Americas')
-    c = ISO3166::Country.find_country_by_alpha3('can')
+    c = CountryAtWork.find_country_by_name('united states')
+    list = CountryAtWork.find_all_countries_by_region('Americas')
+    c = CountryAtWork.find_country_by_alpha3('can')
+    c = CountryAtWork.find_country_by_currency('usd')
 
 For a list of available attributes please see ISO3166::Country::AttrReaders.
 Note: searches are *case insensitive*.
@@ -88,10 +69,10 @@ Country Info
     c.translation('de') #=> 'Vereinigte Staaten von Amerika'
     c.translations['fr'] #=> "États-Unis"
 
-    ISO3166::Country.translations             # {"DE"=>"Germany",...}
-    ISO3166::Country.translations('DE')       # {"DE"=>"Deutschland",...}
-    ISO3166::Country.all_translated           # ['Germany', ...]
-    ISO3166::Country.all_translated('DE')     # ['Deutschland', ...]
+    ISO3166AtWork::Country.translations             # {"DE"=>"Germany",...}
+    ISO3166AtWork::Country.translations('DE')       # {"DE"=>"Deutschland",...}
+    ISO3166AtWork::Country.all_translated           # ['Germany', ...]
+    ISO3166AtWork::Country.all_translated('DE')     # ['Deutschland', ...]
 
   Subdivisions & States
 
@@ -221,8 +202,6 @@ the next ```rake update_cache```
 
 Copyright
 ---------
-
-Copyright (c) 2015 hexorx. See LICENSE for details.
 
 
 [Teliax]: http://teliax.com
