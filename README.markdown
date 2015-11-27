@@ -30,17 +30,17 @@ Basic Usage
 -----------
 
     # with global Country Helper
-    c = CountryAtWork['US']
+    c = Country['US']
 
 Attribute-Based Finder Methods
 ------------
 
 You can lookup a country or an array of countries using any of the data attributes via the find\_country\_by_*attribute* dynamic methods:
 
-    c = CountryAtWork.find_country_by_name('united states')
-    list = CountryAtWork.find_all_countries_by_region('Americas')
-    c = CountryAtWork.find_country_by_alpha3('can')
-    c = CountryAtWork.find_country_by_currency('usd')
+    c = Country.find_country_by_name('united states')
+    list = Country.find_all_countries_by_region('Americas')
+    c = Country.find_country_by_alpha3('can')
+    c = Country.find_country_by_currency('usd')
 
 For a list of available attributes please see ISO3166::Country::AttrReaders.
 Note: searches are *case insensitive*.
