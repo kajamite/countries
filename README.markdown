@@ -200,9 +200,6 @@ the next ```rake update_cache```
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-Copyright
----------
-
 
 [Teliax]: http://teliax.com
 [Centrex]: http://en.wikipedia.org/wiki/Centrex
