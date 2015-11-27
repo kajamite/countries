@@ -147,6 +147,18 @@ class ISO3166AtWork::Country
       search(query)
     end
 
+    def find_country_by_currency(currency)
+      c = currency.downcase
+
+      # priorities
+      case c
+        when 'usd'
+          find_country_by_name 'United States'
+        else
+          find_by('currency', currency, 'country')
+      end
+    end
+
     def method_missing(*m)
       regex = m.first.to_s.match(/^find_(all_)?(country_|countries_)?by_(.+)/)
       super unless regex
