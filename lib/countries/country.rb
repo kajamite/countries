@@ -155,7 +155,7 @@ class ISO3166AtWork::Country
         when 'usd'
           find_country_by_name 'United States'
         else
-          find_by('currency', currency, 'country')
+          find_by('currency', currency, 'country').last
       end
     end
 
