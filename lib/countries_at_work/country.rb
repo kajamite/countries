@@ -1,5 +1,4 @@
-module ISO3166AtWork
-  ; end
+module ISO3166AtWork; end
 
 class ISO3166AtWork::Country
   Setup = ISO3166AtWork::Setup.new

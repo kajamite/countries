@@ -327,7 +327,7 @@ describe ISO3166AtWork::Country do
     end
 
     context "when loaded via 'global'" do
-      before { require 'countries/global' }
+      before { require 'countries_at_work/global' }
 
       describe 'existance' do
         subject { defined?(CountryAtWork) }

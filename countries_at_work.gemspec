@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/countries/version', __FILE__)
+require File.expand_path('../lib/countries_at_work/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ['Oleh Novosad', 'Josh Robinson', 'Joe Corcoran', 'Russell Osborne']
