@@ -321,7 +321,7 @@ describe ISO3166AtWork::Country do
 
   describe 'Country class' do
     context "when loaded via 'iso3166' existance" do
-      subject { defined?(CountryAtWork) }
+      subject { defined?(Country) }
 
       it { is_expected.to be_falsey }
     end
