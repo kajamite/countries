@@ -70,7 +70,9 @@ class ISO3166AtWork::Country
   end
 
   def currency
-    ISO4217::Currency.from_code(@data['currency'])
+    c = ISO4217::Currency.from_code(@data['currency'])
+    return c if c =='CAD'
+    'USD'
   end
 
   def currency_code
