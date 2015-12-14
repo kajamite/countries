@@ -70,13 +70,15 @@ class ISO3166AtWork::Country
   end
 
   def currency
-    c = ISO4217::Currency.from_code(@data['currency'])
-    return c if c =='CAD'
-    'USD'
+    c = @data['currency']
+    c = 'USD' if c != 'CAD'
+    ISO4217::Currency.from_code(c)
   end
 
   def currency_code
-    @data['currency']
+    c = @data['currency']
+    return c if c == 'CAD'
+    'USD'
   end
 
   def subdivisions
